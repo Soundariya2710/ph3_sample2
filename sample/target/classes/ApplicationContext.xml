@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+               
+               
+    <bean id = "studentbean"   class ="com.simplilearn.spring.Student">
+      <property name ="name"  value="Soundariya">  </property>
+    </bean>     
+    
+    <bean id = "addressbean1"   class ="com.simplilearn.spring.Address">
+      <constructor-arg value ="Aurangabad"></constructor-arg>
+      <constructor-arg value ="Maharashtra"></constructor-arg>
+      <constructor-arg value ="India"></constructor-arg>
+    </bean> 
+    
+     <bean id = "addressbean2"   class ="com.simplilearn.spring.Address">
+      <constructor-arg value ="Mumbai"></constructor-arg>
+      <constructor-arg value ="Maharashtra"></constructor-arg>
+      <constructor-arg value ="India"></constructor-arg>
+    </bean>  
+    
+     <bean id = "addressbean3"   class ="com.simplilearn.spring.Address">
+      <constructor-arg value ="Chennai"></constructor-arg>
+      <constructor-arg value ="TamilNadu"></constructor-arg>
+      <constructor-arg value ="India"></constructor-arg>
+    </bean>  
+    
+     <bean id = "addressbean4"   class ="com.simplilearn.spring.Address">
+      <constructor-arg value ="Bengaluru"></constructor-arg>
+      <constructor-arg value ="Karnataka"></constructor-arg>
+      <constructor-arg value ="India"></constructor-arg>
+    </bean>  
+    
+    
+     
+    
+   <bean id="employeebean"
+		class="com.simplilearn.spring.Employee">
+		<constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg value="Sam"></constructor-arg>
+		<constructor-arg>
+		    <list>
+		    
+		    <ref bean="addressbean1" />
+				<ref bean="addressbean2" />
+				<ref bean="addressbean3" />
+				<ref bean="addressbean4" />
+		    </list>
+		</constructor-arg>
+		</bean>
+	<bean id = "userbean1"   class ="com.simplilearn.spring.User">
+       <constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg value="Roy"></constructor-arg>
+		<constructor-arg value="roy.1@gmail.com"></constructor-arg>
+    </bean> 
+    
+    <bean id = "userbean2"   class ="com.simplilearn.spring.User">
+       <constructor-arg value="002" type="int"></constructor-arg>
+		<constructor-arg value="Shyam"></constructor-arg>
+		<constructor-arg value="shyam@gmail.com"></constructor-arg>
+    </bean>
+	
+	<bean id = "answerbean1"   class ="com.simplilearn.spring.Answers">
+       <constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg
+			value="Spring Framework is lightweight and flexible."></constructor-arg>
+		<constructor-arg value="30/12/2023"></constructor-arg>
+    </bean> 
+    
+    <bean id = "answerbean2"   class ="com.simplilearn.spring.Answers">
+       <constructor-arg value="002" type="int"></constructor-arg>
+		<constructor-arg
+			value="Spring Framework is focused."></constructor-arg>
+		<constructor-arg value="31/12/2023"></constructor-arg>
+    </bean> 
+    
+    <bean id = "questionbean"   class ="com.simplilearn.spring.Question">
+       <constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg
+			value="What is Spring Framework?"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="answerbean1" value-ref="userbean1"></entry>
+				<entry key-ref="answerbean2" value-ref="userbean2"></entry>
+			</map>
+		</constructor-arg>
+    </bean> 
+  </beans>             
