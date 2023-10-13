@@ -84,8 +84,8 @@ public class Employeedao {
 		
 		});
 	} 
-	
-	public void saveEmpWithNamedQuery(Employee e) {
+	 
+	public  void saveEmpWithNamedQuery(Employee e) {
 		String query = "insert into emp1 values (:id,:name,:password,:email,:country)";
 		
 		Map<String, Object> map = new HashMap<String, Object>();

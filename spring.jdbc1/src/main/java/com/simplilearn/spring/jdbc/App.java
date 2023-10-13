@@ -26,7 +26,7 @@ public class App
         	
         }*/
         
-        Boolean status = emp.saveEmployeeByPreparedStatement(new Employee(103, "Shyam", "shyam@1023", "shyam@hotmail.com", "AUS"));
+        /*Boolean status = emp.saveEmployeeByPreparedStatement(new Employee(103, "Shyam", "shyam@1023", "shyam@hotmail.com", "AUS"));
       
         if(!status) {
          	System.out.println("Operation Successful");          }
@@ -34,6 +34,8 @@ public class App
         List<Employee> empList= emp.getEmplList();
      for(Employee e : empList) {
     	 System.out.println(e);
-     }
+     }*/
+     
+     emp.saveEmpWithNamedQuery(new Employee(104, "Chile", "chile@1000", "chile@outlook.com", "UK"));
     }
 }
