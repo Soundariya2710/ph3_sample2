@@ -1,5 +1,7 @@
 package com.simplilearn.spring.jdbc;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -17,11 +19,21 @@ public class App
     	 ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
         Employeedao emp = (Employeedao) context.getBean("employeedao");
         
-        int status = emp.saveEmployee(new Employee(110, "Soundariya", "admin", "soundariya@gmail.com", "India"));
+       /* int status = emp.saveEmployee(new Employee(110, "Soundariya", "admin", "soundariya@gmail.com", "India"));
         
         if(status>0) {
         	System.out.println("Operation successful");
         	
-        }
+        }*/
+        
+        Boolean status = emp.saveEmployeeByPreparedStatement(new Employee(103, "Shyam", "shyam@1023", "shyam@hotmail.com", "AUS"));
+      
+        if(!status) {
+         	System.out.println("Operation Successful");          }
+        
+        List<Employee> empList= emp.getEmplList();
+     for(Employee e : empList) {
+    	 System.out.println(e);
+     }
     }
 }
